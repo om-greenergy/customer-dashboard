@@ -31,7 +31,12 @@
   }
   .header-left h1 { font-size: 1.6rem; font-weight: 700; color: #E2E0D8; }
   .header-left p { font-size: 0.85rem; color: #c8d8cc; margin-top: 4px; }
-  .header-right { display: flex; gap: 12px; align-items: center; }
+  .header-right { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .nav-link { display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+    background: rgba(255,255,255,.16); color: #E2E0D8; border: 1px solid rgba(255,255,255,.4);
+    padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; min-height: 38px;
+    transition: background .15s ease, transform .15s ease; }
+  .nav-link:hover { background: rgba(255,255,255,.32); transform: translateY(-1px); }
   .badge { background: #789474; color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
   .badge.green { background: #35654E; }
 
@@ -239,6 +244,7 @@
   <div class="header-right">
     <span class="badge green" id="hdr-operating">86 Operating</span>
     <span class="badge" id="hdr-total">124 Projects</span>
+    <a class="nav-link" href="index.html">📊 Dashboard</a>
   </div>
 </div>
 
