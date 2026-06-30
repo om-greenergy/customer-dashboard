@@ -232,6 +232,20 @@
 .proj-row{cursor:pointer;}
 .proj-row:hover{background:#f3f7f3 !important;}
 @media(max-width:640px){.pp-item,.pp-data{width:auto;}.pp-modal{width:100%;}}
+
+/* ── Overview polish: Owner legend + Monthly movement table ── */
+#owner-legend-table table { width: 100%; }
+#owner-legend-table tbody tr { transition: background .12s ease; }
+#owner-legend-table tbody tr:nth-child(even) { background: #faf9f4; }
+#owner-legend-table tbody tr:hover { background: #edf4ee; }
+#owner-legend-table tbody td { padding-top: 10px !important; padding-bottom: 10px !important; }
+#owner-legend-table div[style*="height:8px"] { height: 11px !important; border-radius: 6px !important; }
+#ov-movement-overview table { border: 1px solid #e6e1d7; }
+#ov-movement-table-body tr { transition: background .12s ease; }
+#ov-movement-table-body tr:hover td { background-color: #eef4ee !important; }
+@media (max-width: 600px) {
+  #owner-legend-table tbody td { padding-top: 8px !important; padding-bottom: 8px !important; }
+}
 </style>
 </head>
 <body>
@@ -416,7 +430,11 @@
       </div>
       <!-- Overview table (all months) -->
       <div id="ov-movement-overview">
-        <table style="width:100%;border-collapse:collapse;font-size:0.83rem;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.83rem;table-layout:fixed;">
+          <colgroup>
+            <col style="width:22%;"><col style="width:14%;"><col style="width:15%;">
+            <col style="width:14%;"><col style="width:15%;"><col style="width:20%;">
+          </colgroup>
           <thead>
             <tr style="background:#f5f3ef;">
               <th style="padding:10px 14px;text-align:left;color:#789474;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid #ddd9d0;" rowspan="2">Month</th>
