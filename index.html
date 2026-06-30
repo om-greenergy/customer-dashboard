@@ -291,6 +291,16 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
   .kpi-grid, .kpi-grid-3 { grid-template-columns: 1fr; }
   .kpi-value { font-size: 1.9rem; }
 }
+
+/* --- Page navigation button (Dashboard <-> Map) --- */
+.nav-link {
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  background: rgba(255,255,255,.16); color: #E2E0D8;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+  min-height: 38px; transition: background .15s ease, transform .15s ease;
+}
+.nav-link:hover { background: rgba(255,255,255,.32); transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -303,6 +313,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
   <div class="header-right">
     <span class="badge green" id="hdr-operating">86 Operating</span>
     <span class="badge" id="hdr-total">124 Projects</span>
+    <a class="nav-link" href="map.html">🗺️ Map View</a>
   </div>
 </div>
 
