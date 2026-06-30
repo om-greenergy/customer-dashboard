@@ -288,7 +288,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 
 /* --- Tiny phones: one card per row so nothing feels squished (≤380px) --- */
 @media (max-width: 380px) {
-  .kpi-grid, .kpi-grid-3 { grid-template-columns: minmax(0,1fr) !important; }
+  #tab-overview .kpi-grid, #tab-overview .kpi-grid-3 { grid-template-columns: minmax(0,1fr) !important; }
   .kpi-value { font-size: 1.9rem; }
 }
 
@@ -319,9 +319,9 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
      `auto` minimum refuses to shrink below the card's content — so the grid
      grew wider than the screen and dragged the whole Overview (and its tables)
      past the viewport. minmax(0,1fr) lets the tracks shrink so content wraps. */
-  .kpi-grid, .kpi-grid-3 { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; }
-  .chart-grid, .chart-grid.three { grid-template-columns: minmax(0,1fr) !important; }
-  .kpi-card, .chart-card { min-width: 0 !important; }
+  #tab-overview .kpi-grid, #tab-overview .kpi-grid-3 { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; }
+  #tab-overview .chart-grid, #tab-overview .chart-grid.three { grid-template-columns: minmax(0,1fr) !important; }
+  #tab-overview .kpi-card, #tab-overview .chart-card { min-width: 0 !important; }
   #tab-overview canvas { max-width: 100% !important; }
   #tab-overview > div { max-width: 100vw !important; }
   /* Owner doughnut is a fixed 320px box — shrink it on narrow phones so it
