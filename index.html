@@ -225,6 +225,72 @@
 .proj-row{cursor:pointer;}
 .proj-row:hover{background:#f3f7f3 !important;}
 @media(max-width:640px){.pp-item,.pp-data{width:auto;}.pp-modal{width:100%;}}
+
+/* ════════════════════════════════════════════════════════════════
+   DESIGN ENHANCEMENTS — responsive + polish (additive, all devices)
+   Added 2026-06-30. Pure CSS, appended so it overrides where needed
+   and never disturbs the original desktop layout.
+   ════════════════════════════════════════════════════════════════ */
+
+/* --- Global polish (every screen) --- */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+       overflow-x: clip; }                 /* kill accidental sideways page scroll */
+
+/* Header stays visible while scrolling long tables */
+.header { position: sticky; top: 0; z-index: 50;
+          box-shadow: 0 2px 10px rgba(40,60,45,.18); }
+
+/* Soft modern lift on cards — pointer devices only (not touch) */
+@media (hover: hover) {
+  .kpi-card, .chart-card { transition: box-shadow .2s ease, transform .2s ease; }
+  .kpi-card:hover, .chart-card:hover {
+    box-shadow: 0 8px 22px rgba(40,60,45,.12); transform: translateY(-2px);
+  }
+  .tab { transition: background .15s ease, color .15s ease; }
+}
+.chart-wrap canvas { max-width: 100% !important; }   /* charts never overflow */
+
+/* --- Tablet: use the wider canvas better (601–900px) --- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .kpi-grid   { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .kpi-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .chart-grid       { grid-template-columns: 1fr 1fr; }   /* 2 charts side by side */
+  .chart-grid.three { grid-template-columns: 1fr 1fr; }
+  .header     { flex-direction: row; align-items: center; }
+  .content    { padding: 20px 24px; }
+}
+
+/* --- Wide tables on small screens: freeze the first column --- */
+@media (max-width: 760px) {
+  table th:first-child, table td:first-child {
+    position: sticky; left: 0; z-index: 2;
+    background: #ffffff; box-shadow: 2px 0 5px rgba(0,0,0,.06);
+  }
+  thead th:first-child { background: #f5f3ef; }
+}
+
+/* --- Phone readability: bigger, less cramped (≤600px) --- */
+@media (max-width: 600px) {
+  .content     { padding: 14px 12px 28px; }
+  .kpi-grid, .kpi-grid-3 { gap: 12px; }
+  .kpi-card    { padding: 16px 14px; border-radius: 14px; }
+  .kpi-value   { font-size: 1.72rem; }
+  .kpi-label   { font-size: 0.74rem; }
+  .kpi-sub     { font-size: 0.72rem; }
+  .chart-title { font-size: 0.84rem; }
+  th { font-size: 0.7rem; padding: 9px 9px; }
+  td { font-size: 0.84rem; padding: 9px 9px; }
+  .contact-chip, .map-link { font-size: 0.76rem; }
+  .status-badge { font-size: 0.7rem; }
+  .header-left h1 { font-size: 1.15rem; }
+}
+
+/* --- Tiny phones: one card per row so nothing feels squished (≤380px) --- */
+@media (max-width: 380px) {
+  .kpi-grid, .kpi-grid-3 { grid-template-columns: 1fr; }
+  .kpi-value { font-size: 1.9rem; }
+}
 </style>
 </head>
 <body>
