@@ -243,6 +243,10 @@
 #ov-movement-overview table { border: 1px solid #e6e1d7; }
 #ov-movement-table-body tr { transition: background .12s ease; }
 #ov-movement-table-body tr:hover td { background-color: #eef4ee !important; }
+/* Average Rates by Project Size — same zebra/hover as the other tables */
+#cap-range-table tbody tr { transition: background .12s ease; }
+#cap-range-table tbody tr:nth-child(even) { background: #faf9f4; }
+#cap-range-table tbody tr:hover { background: #edf4ee; }
 
 /* ── Mobile fit: keep Owner legend & Monthly table fully on-screen ── */
 @media (max-width: 600px) {
@@ -274,6 +278,18 @@
   #ov-movement-overview table { table-layout: fixed !important; width: 100% !important; }
   #ov-movement-overview th, #ov-movement-overview td {
     padding: 7px 3px !important; font-size: 0.66rem !important; word-break: break-word;
+  }
+
+  /* Budget tab — "Average Rates by Project Size": stack chart + table, drop the
+     fixed min-widths so the table text no longer spills out of the card. */
+  #tab-budget div[style*="min-width:320px"],
+  #tab-budget div[style*="min-width:340px"] {
+    flex: 1 0 100% !important; min-width: 0 !important; width: 100% !important;
+  }
+  #tab-budget canvas { max-width: 100% !important; }
+  #cap-range-table { font-size: 0.72rem !important; }
+  #cap-range-table th, #cap-range-table td {
+    padding: 7px 5px !important; white-space: normal !important;
   }
 }
 @media (max-width: 380px) {
